@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pavelpocho.bt_data_visualizer.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <!--
+
+                We can display:
+                    - Battery percentage
+                    - Power
+
+                    - Speed
+                    - Acceleration
+
+                    - Battery temperature
+
+            -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/battery_percentage_parameter_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/power_parameter_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/speed_parameter_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/acceleration_parameter_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/battery_temperature_parameter_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/cylinder_temperature_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/cylinder_temperature_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/cylinder_temperature_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/cylinder_temperature_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/air_temperature_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/air_temperature_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/coolant_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+                <com.pavelpocho.bledatavisualizer.ParameterData
+                    android:id="@+id/battery_voltage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/attempting_connect"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/connect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/reconnect_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/reconnect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:enabled="true"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            <Button
+                android:id="@+id/disconnect_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:enabled="false"
+                android:text="@string/disconnect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/cancel_button" />
+
+            <!--            <Button-->
+<!--                android:id="@+id/send_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:text="@string/send"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/disconnect_button" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tm_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:text=""-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/disconnect_button" />-->
+
+<!--            <lecho.lib.hellocharts.view.LineChartView-->
+<!--                android:id="@+id/tm_chart"-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tb_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="21dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:text=""-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tm_chart" />-->
+
+<!--            <lecho.lib.hellocharts.view.LineChartView-->
+<!--                android:id="@+id/tb_chart"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="240dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/border_background"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tb_text" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/r_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="21dp"-->
+<!--                android:text=""-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tb_chart" />-->
+
+<!--            <lecho.lib.hellocharts.view.LineChartView-->
+<!--                android:id="@+id/r_chart"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="240dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/border_background"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/r_text" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/c_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="21dp"-->
+<!--                android:text=""-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/r_chart" />-->
+
+<!--            <lecho.lib.hellocharts.view.LineChartView-->
+<!--                android:id="@+id/c_chart"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="240dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/border_background"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/c_text" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/a_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="21dp"-->
+<!--                android:text=""-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/c_chart" />-->
+
+<!--            <lecho.lib.hellocharts.view.LineChartView-->
+<!--                android:id="@+id/a_chart"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="240dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/border_background"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/a_text" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/b_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="21dp"-->
+<!--                android:text=""-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/a_chart" />-->
+
+<!--            <lecho.lib.hellocharts.view.LineChartView-->
+<!--                android:id="@+id/b_chart"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="240dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/border_background"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/b_text" />-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

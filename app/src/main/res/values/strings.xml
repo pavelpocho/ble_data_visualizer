@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PE Bluetooth Visualizer</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="hello">Connect to a device to see data.</string>
+    <string name="attempting_connect">Attempting a connection to your device…</string>
+    <string name="connect_new_device">Connect to new device</string>
+    <string name="congrats">Congrats! You are connected.</string>
+    <string name="cancel">Cancel</string>
+    <string name="reconnect">Reconnect to your device</string>
+    <string name="send">Send</string>
+    <string name="text">Text</string>
+    <string name="history">History</string>
+    <string name="placeholder">Placeholder</string>
+</resources>
